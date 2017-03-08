@@ -31,21 +31,35 @@ typedef unsigned long* bit_array_t;
 			BA_GET_BIT(jmeno_pole, index)
 		
 	
-#else //TODO
+#else
 	
-	inline ba_size(jmeno_pole)
+	inline unsigned long ba_size(unsigned long jmeno_pole[])
 	{
 		return jmeno_pole[0];
 	}
 	
-	inline ba_set_bit(jmeno_pole, index, vyraz)
+	inline void ba_set_bit(unsigned long jmeno_pole[], unsigned long index, int vyraz)
 	{
-		(vyraz != 0) ? (jmeno_pole |= 1 << index) : (jmeno_pole &= ~(1 << index));
+		if((index + 1) > ba_size(jmeno_pole))
+		{
+			printf("Error\n");
+		} else
+		{
+			BA_SET_BIT(jmeno_pole, index, vyraz);
+		}
 	}
 	
-	inline ba_get_bit(jmeno_pole, index)
+	inline unsigned long ba_get_bit(unsigned long jmeno_pole[], unsigned long index)
 	{
-		return (jmeno_pole >> index) & 1;
+		if((index + 1) > ba_size(jmeno_pole))
+		{
+			printf("Error\n");
+		} else
+		{
+			return BA_GET_BIT(jmeno_pole, index);
+		}
+		
+		return -1;
 	}
 	
 #endif
