@@ -1,7 +1,7 @@
 #include "primes.h"
 #include <stdio.h>
 
-#define N 2048000//303000000
+#define N 303000000
 
 int main(void)
 {
@@ -10,7 +10,7 @@ int main(void)
 	Eratosthenes(primes);
 	
 	int count = 10;
-	for(unsigned long i = N - 1; i >= 0; i--)
+	for(unsigned long i = N - 1; i > 1; i--)
 	{
 		if(ba_get_bit(primes, i) == 0)
 		{
@@ -21,4 +21,6 @@ int main(void)
 		if(count == 0)
 			break;
 	}
+	
+	return 0;
 }

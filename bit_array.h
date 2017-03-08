@@ -3,10 +3,10 @@
 
 typedef unsigned long* bit_array_t;
 
-#define SIZE sizeof(unsigned long)*CHAR_BIT
+#define SIZE (sizeof(unsigned long)*CHAR_BIT)
 
 #define ba_create(jmeno_pole, velikost) \
-	unsigned long jmeno_pole[velikost/SIZE + 1] = {velikost}
+	unsigned long jmeno_pole[velikost/SIZE + 2] = {velikost}
 	
 #define BA_SET_BIT(p, i, b) \
 	((b != 0) ? (p[i/SIZE + 1] |= 1L << (i%SIZE)) : (p[i/SIZE + 1] &= ~(1L << (i%SIZE))))
