@@ -1,5 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
+#include "error.h"
 
 typedef unsigned long* bit_array_t;
 
@@ -20,15 +21,15 @@ typedef unsigned long* bit_array_t;
 		jmeno_pole[0]
 	
 	#define ba_set_bit(jmeno_pole, index, vyraz) \
-		((index + 1) > ba_size(jmeno_pole)) ? \
-			printf("Error\n") : \
-			BA_SET_BIT(jmeno_pole, index, vyraz)
+		(((index + 1) > ba_size(jmeno_pole)) \
+			? (error_msg("Index %lu mimo rozsah 0..%lu", (unsigned long)index, (unsigned long)ba_size(jmeno_pole)-1), 1) \
+			: BA_SET_BIT(jmeno_pole, index, vyraz))
 		
 	
 	#define ba_get_bit(jmeno_pole, index) \
-		((index + 1) > ba_size(jmeno_pole)) ? \
-			printf("Error\n") : \
-			BA_GET_BIT(jmeno_pole, index)
+		(((index + 1) > ba_size(jmeno_pole)) \
+			? (error_msg("Index %lu mimo rozsah 0..%lu", (unsigned long)index, (unsigned long)ba_size(jmeno_pole)-1), 1) \
+			: BA_GET_BIT(jmeno_pole, index))
 		
 	
 #else
@@ -42,7 +43,7 @@ typedef unsigned long* bit_array_t;
 	{
 		if((index + 1) > ba_size(jmeno_pole))
 		{
-			printf("Error\n");
+			error_msg("Index %lu mimo rozsah 0..%lu", (unsigned long)index, ba_size(jmeno_pole)-1);
 		} else
 		{
 			BA_SET_BIT(jmeno_pole, index, vyraz);
@@ -53,7 +54,7 @@ typedef unsigned long* bit_array_t;
 	{
 		if((index + 1) > ba_size(jmeno_pole))
 		{
-			printf("Error\n");
+			error_msg("Index %lu mimo rozsah 0..%lu", (unsigned long)index, ba_size(jmeno_pole)-1);
 		} else
 		{
 			return BA_GET_BIT(jmeno_pole, index);
