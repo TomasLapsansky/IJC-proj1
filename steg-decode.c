@@ -1,3 +1,12 @@
+/*
+steg-decode.c
+Riesenie IJC-DU1, priklad a), 14.3.2017
+Autor: Tomas Lapsansky(xlapsa00), FIT VUT Brno
+Prekladac: GCC 5.4.0
+----------------------------------------------
+Dekodovanie tajnej spravy z obrazka .ppm na zaklade prvocisel
+*/
+
 #include "ppm.h"
 #include "error.h"
 #include "primes.h"
