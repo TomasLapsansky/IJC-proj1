@@ -1,3 +1,12 @@
+/*
+eratosthenes.c
+Riesenie IJC-DU1, priklad a), 14.3.2017
+Autor: Tomas Lapsansky(xlapsa00), FIT VUT Brno
+Prekladac: GCC 5.4.0
+----------------------------------------------
+Naplnenie pola pomocou algoritmu Eratostenovo sito
+*/
+
 #include <math.h>
 #include "primes.h"
 

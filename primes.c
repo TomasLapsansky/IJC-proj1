@@ -1,3 +1,12 @@
+/*
+primes.c
+Riesenie IJC-DU1, priklad a), 14.3.2017
+Autor: Tomas Lapsansky(xlapsa00), FIT VUT Brno
+Prekladac: GCC 5.4.0
+----------------------------------------------
+Vytvorenie a nasledne naplnenie pola[N] prvocislami, prvocislo: index == 0
+*/
+
 #include "primes.h"
 #include <stdio.h>
 

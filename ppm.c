@@ -1,3 +1,12 @@
+/*
+ppm.c
+Riesenie IJC-DU1, priklad a), 14.3.2017
+Autor: Tomas Lapsansky(xlapsa00), FIT VUT Brno
+Prekladac: GCC 5.4.0
+----------------------------------------------
+Funkcie pre citanie a zapisovanie do suboru .ppm
+*/
+
 #include "ppm.h"
 
 struct ppm * ppm_read(const char * filename)

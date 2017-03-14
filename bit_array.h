@@ -1,3 +1,12 @@
+/*
+bit_array.h
+Riesenie IJC-DU1, priklad a), 14.3.2017
+Autor: Tomas Lapsansky(xlapsa00), FIT VUT Brno
+Prekladac: GCC 5.4.0
+----------------------------------------------
+Definicia makier pre pracu s bitmi v poli unsigned long
+*/
+
 #include <limits.h>
 #include <stdio.h>
 #include "error.h"
