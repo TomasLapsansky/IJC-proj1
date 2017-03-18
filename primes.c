@@ -18,17 +18,23 @@ int main(void)
 	
 	Eratosthenes(primes);
 	
+	unsigned long last_primes[10];
 	int count = 10;
 	for(unsigned long i = N - 1; i > 1; i--)
 	{
 		if(ba_get_bit(primes, i) == 0)
 		{
-			printf("%lu\n", i);
+			last_primes[count - 1] = i;
 			count--;
 		}
 		
 		if(count == 0)
 			break;
+	}
+	
+	for(int i = 0; i < 10; i++)
+	{
+		printf("%lu\n", last_primes[i]);
 	}
 	
 	return 0;
